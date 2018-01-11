@@ -1,0 +1,129 @@
+A left rotation operation on an array of size  shifts each of the array's elements  unit to the left. For example, if left rotations are performed on array , then the array would become .
+
+Given an array of  integers and a number, , perform  left rotations on the array. Then print the updated array as a single line of space-separated integers.
+
+Input Format
+
+The first line contains two space-separated integers denoting the respective values of  (the number of integers) and  (the number of left rotations you must perform). 
+The second line contains  space-separated integers describing the respective elements of the array's initial state.
+
+Constraints
+
+Output Format
+
+Print a single line of  space-separated integers denoting the final state of the array after performing  left rotations.
+
+Sample Input
+
+5 4
+1 2 3 4 5
+Sample Output
+
+5 1 2 3 4
+Explanation
+
+When we perform  left rotations, the array undergoes the following sequence of changes:
+
+Thus, we print the array's final state as a single line of space-separated values, which is 5 1 2 3 4.
+
+Easy
+Submitted 73409 times
+Max Score 20
+Need Help?
+
+View Discussions
+View Editorial Solution
+View Top Submissions
+Rate This Challenge:
+Download problem statement
+Download sample test cases
+Suggest Edits
+Current Buffer (saved locally, editable)     
+ 
+Java 7
+
+ 
+1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.text.*;
+4
+import java.math.*;
+5
+import java.util.regex.*;
+6
+​
+7
+public class Solution {
+8
+​
+9
+    static int[] leftRotation(int[] a, int d) {
+10
+        for(int i=0;i<d;i++)
+11
+        { 
+12
+            int temp;
+13
+            temp=a[0];
+14
+         for(int j=0;j<(a.length)-1;j++)
+15
+         {
+16
+             a[j]=a[j+1];
+17
+          
+18
+         }
+19
+            a[a.length-1]=temp;
+20
+        }
+21
+         
+22
+         return a;
+23
+    }
+24
+​
+25
+    public static void main(String[] args) {
+26
+        Scanner in = new Scanner(System.in);
+27
+        int n = in.nextInt();
+28
+        int d = in.nextInt();
+29
+        int[] a = new int[n];
+30
+        for(int a_i = 0; a_i < n; a_i++){
+31
+            a[a_i] = in.nextInt();
+32
+        }
+33
+        int[] result = leftRotation(a, d);
+34
+        for (int i = 0; i < result.length; i++) {
+35
+            System.out.print(result[i] + (i != result.length - 1 ? " " : ""));
+36
+        }
+37
+        System.out.println("");
+38
+​
+39
+​
+40
+        in.close();
+41
+    }
+42
+}
