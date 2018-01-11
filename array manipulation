@@ -1,0 +1,129 @@
+You are given a list(1-indexed) of size , initialized with zeroes. You have to perform  operations on the list and output the maximum of final values of all the  elements in the list. For every operation, you are given three integers ,  and  and you have to add value  to all the elements ranging from index  to (both inclusive).
+
+For example, consider a list  of size . The initial list would be  = [, , ] and after performing the update  = , the new list would be  = [, , ]. Here, we've added value 30 to elements between indices 2 and 3. Note the index of the list starts from 1.
+
+Input Format
+
+The first line will contain two integers  and  separated by a single space.
+Next  lines will contain three integers ,  and  separated by a single space.
+Numbers in list are numbered from  to .
+
+Constraints
+
+Output Format
+
+Print in a single line the maximum value in the updated list.
+
+Sample Input
+
+5 3
+1 2 100
+2 5 100
+3 4 100
+Sample Output
+
+200
+Explanation
+
+After first update list will be 100 100 0 0 0. 
+After second update list will be 100 200 100 100 100.
+After third update list will be 100 200 200 200 100.
+So the required answer will be 200.
+
+Hard
+Submitted 49563 times
+Max Score 60
+Need Help?
+
+View Discussions
+View Editorial Solution
+View Top Submissions
+Rate This Challenge:
+Download problem statement
+Download sample test cases
+Suggest Edits
+Choose a translation
+
+Current Buffer (saved locally, editable)     
+ 
+Java 7
+
+ 
+1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.text.*;
+4
+import java.math.*;
+5
+import java.util.regex.*;
+6
+​
+7
+public class Solution {
+8
+​
+9
+    public static void main(String[] args) {
+10
+        Scanner in = new Scanner(System.in);
+11
+        int n = in.nextInt();
+12
+        int m = in.nextInt();
+13
+        long  arr[]=new long [n+1];
+14
+        long max=0;
+15
+        for(int i=1;i<=n;i++)
+16
+        {
+17
+            arr[i]=0;
+18
+        }
+19
+        for(int a0 = 0; a0 < m; a0++){
+20
+            int a = in.nextInt();
+21
+            int b = in.nextInt();
+22
+            int k = in.nextInt();
+23
+            for(int i=a;i<=b;i++)
+24
+            {
+25
+                arr[i]=arr[i]+k;
+26
+            }
+27
+        }
+28
+      for(int i=1;i<=n;i++)
+29
+      {
+30
+          if(max<arr[i])
+31
+          {
+32
+              max=arr[i];
+33
+          }
+34
+      }
+35
+        System.out.println(max);
+36
+        in.close();
+37
+    }
+38
+}
+39
+​
