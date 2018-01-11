@@ -1,0 +1,89 @@
+An array is a type of data structure that stores elements of the same type in a contiguous block of memory. In an array, , of size , each memory location has some unique index,  (where ), that can be referenced as  (you may also see it written as ).
+
+Given an array, , of  integers, print each element in reverse order as a single line of space-separated integers.
+
+Note: If you've already solved our C++ domain's Arrays Introduction challenge, you may want to skip this.
+
+Input Format
+
+The first line contains an integer,  (the number of integers in ). 
+The second line contains  space-separated integers describing .
+
+Constraints
+
+Output Format
+
+Print all  integers in  in reverse order as a single line of space-separated integers.
+
+Sample Input
+
+4
+1 4 3 2
+Sample Output
+
+2 3 4 1
+Easy
+Submitted 230688 times
+Max Score 10
+Need Help?
+
+View Discussions
+View Editorial Solution
+View Top Submissions
+Rate This Challenge:
+Download problem statement
+Download sample test cases
+Suggest Edits
+Current Buffer (saved locally, editable)     
+ 
+Java 7
+
+ 
+1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.text.*;
+4
+import java.math.*;
+5
+import java.util.regex.*;
+6
+​
+7
+public class Solution {
+8
+​
+9
+    public static void main(String[] args) {
+10
+        Scanner in = new Scanner(System.in);
+11
+        int n = in.nextInt();
+12
+        int arr[] = new int[n];
+13
+        for(int arr_i=0; arr_i < n; arr_i++){
+14
+            arr[arr_i] = in.nextInt();
+15
+        }
+16
+        for(int i=n-1;i>=0;i--)
+17
+        {
+18
+         System.out.print(arr[i]+" ");  
+19
+        }
+20
+   
+21
+       
+22
+    }
+23
+}
+24
+​
